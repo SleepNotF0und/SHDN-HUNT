@@ -24,7 +24,7 @@ print(bcolors['BOLD'] +"                                        Coded By hackero
 
 
 #SHODAN API KEY
-My_API = "vnG8ZxcgraOcsyYUetIjQ97nO57nAk9P"      #input(bcolors['FAIL'] +"API KEY$--> "+ bcolors['ENDC']) 
+My_API = input(bcolors['FAIL'] +"API KEY$--> "+ bcolors['ENDC']) 
 API = shodan.Shodan(My_API)
 
 #Query Input
