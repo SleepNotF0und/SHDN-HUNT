@@ -51,6 +51,11 @@ print(bcolors['FAIL']+"\n==========DOMAINS========="+bcolors['ENDC'])
 print(bcolors['BOLD']+ str(set(Get_Domains)).replace('}','').replace('{','').replace("'","").replace(',','\n') +bcolors['ENDC'])
 print(bcolors['FAIL']+"==========================\n\n"+bcolors['ENDC'])
 
+
+#SAVE IPs In FILE.txt
+print(bcolors['OKGREEN']+"!!! RESULT SAVED IN RESULT.txt !!!"+bcolors['ENDC'])
+with open('Result.txt', 'w+') as file:file.write(str(set(Get_Domains)).replace(',','\n').replace("'","").replace("}","").replace("{",""))
+    
 #======================================================================================================================================
 #======================================================================================================================================
 
