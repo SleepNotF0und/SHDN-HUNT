@@ -13,8 +13,8 @@
 * You can Enable IPs Results Just Uncomment the source code  
 
 # Usage
-python SHDN-Hunt.py
-python3 SHDN-Hunt.py
+* python SHDN-Hunt.py
+* python3 SHDN-Hunt.py
 
 # PACKAGES
 * shodan
