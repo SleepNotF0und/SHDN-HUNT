@@ -16,8 +16,8 @@
 python SHDN-Hunt.py
 
 # PACKAGES
-*shodan
-*pyfiglet
+* shodan
+* pyfiglet
 
 DM me if want new features
 https://www.linkedin.com/in/hazeem-yasseer-218260205/
