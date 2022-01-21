@@ -14,6 +14,7 @@
 
 # Usage
 python SHDN-Hunt.py
+python3 SHDN-Hunt.py
 
 # PACKAGES
 * shodan
