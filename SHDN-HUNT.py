@@ -19,7 +19,7 @@ bcolors = {
 
 #BANNER
 print("\n\n",bcolors['FAIL'] + pyfiglet.figlet_format("SHDN HUNT", font = "isometric1" ) + bcolors['ENDC']) 
-print(bcolors['BOLD'] +"    Coded By Hazem Yasser | https://github.com/SleepNotF0und | hackerone.com/0xr3dhunt\n\n" + bcolors['ENDC'])
+print(bcolors['BOLD'] +"Coded By Hazem Yasser | github.com/SleepNotF0und | hackerone.com/0xr3dhunt\n\n" + bcolors['ENDC'])
 
 
 
