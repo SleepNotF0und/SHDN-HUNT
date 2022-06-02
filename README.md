@@ -17,6 +17,7 @@
 * python3 SHDN-Hunt.py
 
 # PACKAGES
+* python==3.7.2
 * shodan
 * pyfiglet
 
