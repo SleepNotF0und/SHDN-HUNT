@@ -21,9 +21,10 @@
 * shodan
 * pyfiglet
 
-DM me if want new features
-Tested on Windows Only, Python 3.7.3
-https://www.linkedin.com/in/hazem-yasser-95233a23a/
+# Note
+* DM me if want new features https://www.linkedin.com/in/hazem-yasser-95233a23a/
+* Tested on Windows Only
+
 
 
 
