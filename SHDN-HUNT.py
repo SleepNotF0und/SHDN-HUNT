@@ -1,5 +1,4 @@
 import shodan
-import pyfiglet
 
 
 
@@ -18,8 +17,29 @@ bcolors = {
 
 
 #BANNER
-print("\n\n",bcolors['FAIL'] + pyfiglet.figlet_format("SHDN HUNT", font = "isometric1" ) + bcolors['ENDC']) 
-print(bcolors['BOLD'] +"Coded By Hazem Yasser | github.com/SleepNotF0und | hackerone.com/0xr3dhunt\n\n" + bcolors['ENDC'])
+print("\n\n      ___           ___           ___           ___  ")
+print("     /\  \         /\__\         /\  \         /\__\     ")
+print("    /::\  \       /:/  /        /::\  \       /::|  |    ")
+print("   /:/\ \  \     /:/__/        /:/\:\  \     /:|:|  |    ")
+print("  _\:\~\ \  \   /::\  \ ___   /:/  \:\__\   /:/|:|  |__  ")
+print(" /\ \:\ \ \__\ /:/\:\  /\__\ /:/__/ \:|__| /:/ |:| /\__\ ")
+print(" \:\ \:\ \/__/ \/__\:\/:/  / \:\  \ /:/  / \/__|:|/:/  / ")
+print("  \:\ \:\__\        \::/  /   \:\  /:/  /      |:/:/  /  ")
+print("   \:\/:/  /        /:/  /     \:\/:/  /       |::/  /   ")
+print("    \::/  /        /:/  /       \::/__/        /:/  /    ")
+print("     \/__/         \/__/         ~~            \/__/     ")
+print("      ___           ___           ___           ___      ")
+print("     /\__\         /\__\         /\__\         /\  \     ")
+print("    /:/  /        /:/  /        /::|  |        \:\  \    ")
+print("   /:/__/        /:/  /        /:|:|  |         \:\  \   ")
+print("  /::\  \ ___   /:/  /  ___   /:/|:|  |__       /::\  \  ")
+print(" /:/\:\  /\__\ /:/__/  /\__\ /:/ |:| /\__\     /:/\:\__\ ")
+print(" \/__\:\/:/  / \:\  \ /:/  / \/__|:|/:/  /    /:/  \/__/ ")
+print("      \::/  /   \:\  /:/  /      |:/:/  /    /:/  /      ")
+print("      /:/  /     \:\/:/  /       |::/  /     \/__/       ")
+print("     /:/  /       \::/  /        /:/  /                  ")
+print("     \/__/         \/__/         \/__/                   ")
+print(bcolors['BOLD'] +"Coded By Hazem Yasser | hackerone.com/0xr3dhunt\n\n" + bcolors['ENDC'])
 
 
 
