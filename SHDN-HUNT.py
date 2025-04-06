@@ -2,36 +2,32 @@ import shodan
 import pyfiglet
 import sys
 
-
 # BANNER
-#BANNER
 print("         _______         ")
-print("     .,-'\_____/`-.      ")
-print("     /`..'\ _ /`.,'\     ")
-print("    /  /`.,' `.,'\  \    ")
-print("   /__/__/  O  \__\__\   ")
-print("   \  \  \     /  /  /   ")
-print("    \  \,'`._,'`./  /    ")
-print("     \,'`./___\,'`./     ")
-print("     '`-./_____\,-'`     ")
+print("     .,-'\\_____/`-.      ")
+print("     /`..'\\ _ /`.,'\\     ")
+print("    /  /`.,' `.,'\\  \\    ")
+print("   /__/__/  O  \\__\\__\\   ")
+print("   \\  \\  \\     /  /  /   ")
+print("    \\  \\,'.__,'./  /    ")
+print("     \\, '.___./,'./     ")
+print("     '`-./____\\,-'`     ")
 print("                         ")
 print("Coded By Hazem Yasser | hackerone.com/0xr3dhunt\n\n")
 
 # SHODAN API KEY
-My_API = "--YOUR-API-KEY-HERE--"
+My_API = ""
 API = shodan.Shodan(My_API)
 
-# USAGE
-if len(sys.argv) != 3:
-    print(" >>>> python SHDN-HUNT.py -d <<-DOMAIN-NAME->>")
-    print(" >>>> python SHDN-HUNT.py -l <<-DOMAINS.txt->>")
+# Usage Help
+if len(sys.argv) < 3:
+    print(" >>>> python SHDN-HUNT.py -d <<DOMAIN>> [-o output.txt]")
+    print(" >>>> python SHDN-HUNT.py -l <<DOMAINS.txt>> [-o output.txt]")
     sys.exit(0)
-
 
 def remove_duplicates(nested_list):
     unique_domains = set()
     result = []
-
     for sublist in nested_list:
         filtered_sublist = []
         for domain in sublist:
@@ -43,11 +39,10 @@ def remove_duplicates(nested_list):
         result.append(filtered_sublist)
     return result
 
-
 def hunt_domain(target, output_file):
     print(f"\n[+] Hunting: {target}")
-
     Query = f'ssl.cert.subject.CN:"*.{target}"'
+
     try:
         Result1 = API.search_cursor(Query)
     except shodan.APIError as error:
@@ -67,7 +62,6 @@ def hunt_domain(target, output_file):
 
     final_hostnames = str(remove_duplicates(Hostnames)).replace('}', '').replace('{', '').replace('[', '').replace(']', '').replace("'", "").replace(',', '\n')
     cleaned_hostnames = "\n".join(line.strip() for line in final_hostnames.splitlines() if line.strip())
-
     unique_ips = sorted(set(ip.strip() for ip in IPs if ip and ':' not in ip))
 
     # Print results
@@ -82,23 +76,40 @@ def hunt_domain(target, output_file):
         for ip in unique_ips:
             file.write(ip + "\n")
 
+# Handle args
+args = sys.argv
+mode = args[1]
+target = args[2]
+output_file = ""
 
-# Single Domain Mode
-if sys.argv[1] == "-d":
-    target = sys.argv[2]
-    output_file = f"{target}_Shdn-hunt_.txt"
+# Check if -o flag is passed
+if "-o" in args:
+    output_index = args.index("-o")
+    if output_index + 1 < len(args):
+        output_file = args[output_index + 1]
+    else:
+        print("[-] Error: No output filename specified after -o")
+        sys.exit(1)
+else:
+    if mode == "-d":
+        output_file = f"{target}_Shdn-hunt_.txt"
+    elif mode == "-l":
+        output_file = f"{target}_Shdn-hunt_.txt"
+
+# Single domain
+if mode == "-d":
     hunt_domain(target, output_file)
 
-# List Mode
-elif sys.argv[1] == "-l":
-    filename = sys.argv[2]
-    output_file = f"{filename}_Shdn-hunt_.txt"  # All results in one file
+# List of domains
+elif mode == "-l":
     try:
-        with open(filename, 'r') as f:
+        with open(target, 'r') as f:
             domains = [line.strip() for line in f if line.strip()]
             for domain in domains:
                 hunt_domain(domain, output_file)
         print(f"\n>>>> All results saved in {output_file}")
     except FileNotFoundError:
-        print("!!! File not found:", filename)
+        print("!!! File not found:", target)
         sys.exit(1)
+else:
+    print("[-] Unknown mode. Use -d <domain> or -l <file>")
