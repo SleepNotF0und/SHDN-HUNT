@@ -9,15 +9,13 @@
 * Customized Shodan Command line interface for bughunters 
 * Written with love with python 3
 * Very very usefull in Collecting Domains for Wide Range Target
-* It Collect Domains only Since I have Disabled the IPs Result because my API Credits
-* You can Enable IPs Results Just Uncomment the source code  
+
 
 # Usage
-* python SHDN-Hunt.py
-* python3 SHDN-Hunt.py
+* python SHDN-HUNT.py -d <<-DOMAIN->> -o output.txt
+* python SHDN-HUNT.py -l <<-LIST.txt->> -o output.txt
 
 # PACKAGES
-* python==3.7.2
 * shodan
 
 # Note
