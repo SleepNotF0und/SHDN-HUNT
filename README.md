@@ -1,9 +1,5 @@
 
 
-![Screenshot (10)](https://user-images.githubusercontent.com/51271019/153992740-fc529824-546f-43f4-90ef-3b674aeecdcc.png)
-
-
-
 
 # SHDN-Hunt
 * Customized Shodan Command line interface for bughunters 
